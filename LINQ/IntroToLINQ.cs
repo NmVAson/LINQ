@@ -12,9 +12,10 @@ namespace LINQ
             
             var numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6 };
             var evenNumbers = 
-                    from num in numbers
-                    where num % 2 == 0 
-                    select num;
+                    (from num in numbers
+                    where num % 2 == 0
+                    select num)
+                    .Distinct();
 
             Console.WriteLine(string.Join(",", evenNumbers));
         }
